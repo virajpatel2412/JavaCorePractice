@@ -9,6 +9,21 @@ package patterns;
  *
  * @author HP
  */
+
+/*
+ 
+1
+01
+101
+0101
+10101
+010101
+1010101
+01010101
+ 
+ */
+
+
 public class AlternatePattern {
     public static void main(String args[]){
         int n =8;

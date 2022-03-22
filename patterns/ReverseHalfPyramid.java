@@ -8,6 +8,14 @@ package patterns;
 /**
  *
  * @author HP
+
+*****
+****
+***
+**
+*
+
+
  */
 public class ReverseHalfPyramid {
 

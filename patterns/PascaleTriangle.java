@@ -12,18 +12,20 @@ import java.util.Scanner;
 /**
  *
  * @author HP
+
+For input 5 result is below 
+
+1  
+1  1  
+1  2  1  
+1  3  3  1  
+1  4  6  4  1  
+
+
  */
 public class PascaleTriangle {
 
-//    Input Format: N = 5
-//
-//Result:
-//    1
-//   1 1
-//  1 2 1
-// 1 3 3 1
-//1 4 6 4 1
-//
+
 //Explanation: There are 5 rows in the output matrix. Each row corresponds to each one of the rows in the image shown above.
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);

@@ -8,6 +8,13 @@ package patterns;
 /**
  *
  * @author HP
+ 
+* * * * * 
+*       * 
+*       * 
+*       * 
+* * * * * 
+
  */
 public class HolloSquare {
     public static void main(String args[]){
