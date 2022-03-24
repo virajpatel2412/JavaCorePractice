@@ -3,7 +3,7 @@ package dynamicPrograming;
 public class KnapSack {
 	
 	public static void findObjs(int[][] objs, int[][] count, int n, int m) {
-		if(n==0 || m==0)
+		if(n==0 && m==0)
 			return;
 		int profit = count[n][m];
 		if(count[n][m] != count[n-1][m]) {
