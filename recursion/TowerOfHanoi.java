@@ -16,7 +16,7 @@ public class TowerOfHanoi {
 
 	public static void main(String[] args) {
 		
-		towerOfHanoi(20,'s','h','d');
+		towerOfHanoi(3,'s','h','d');
 
 	}
 

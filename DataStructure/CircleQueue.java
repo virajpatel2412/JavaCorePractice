@@ -23,10 +23,6 @@ public class CircleQueue<T> {
         public String toString() {
             return  data.toString();
         }
-        
-        public boolean euqalTo(Node a){
-            return (this.data == a.data);
-        }
               
     }
     Node front;

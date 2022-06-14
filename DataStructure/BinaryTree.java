@@ -8,7 +8,7 @@ package DataStructure;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.TreeMap;
-import java.util.Pair;
+import javafx.util.Pair;
 
 /**
  *

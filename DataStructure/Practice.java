@@ -18,24 +18,27 @@ public class Practice {
      */
     public static void main(String[] args) throws Exception {
         
-        CircleQueue<Integer> q = new CircleQueue<>();
-        for(int i=0; i<10; i++){
-            q.Enqueue(i*10);
-        }
-                System.out.println("hiii");
-
-                for(int i=0; i<9; i++){
-                    System.out.print(" "+q.front);
-                    q.Dequeue();
-                }
-        System.out.println(q.find(90));
-//        q.Dequeue();
-//        q.Dequeue();
-//        q.Dequeue();
-//        q.Dequeue();
-//        System.out.println(q.Dequeue());
-//
-//        System.out.println(q);
-//        System.out.println(q.size());
+        Graph g = new Graph();
+        
+        g.addNode(0);
+        g.addNode(1);
+        g.addNode(2);
+        g.addNode(3);
+        g.addNode(4);
+        g.addNode(5);
+        g.addNode(6);
+        
+        g.addEdge(0, 1, false);
+        g.addEdge(0, 4, false);
+        g.addEdge(1, 2, false);
+        g.addEdge(2, 3, false);
+        g.addEdge(3, 4, false);
+        g.addEdge(4, 5, true);
+        g.addEdge(5, 6, false);
+        g.addEdge(4, 6, false);
+//        g.printPaths(4, 6);
+//        System.out.println(g.isPathExist(4, 5));
+        g.printBFS(0);
+        System.out.println(g);
     }  
 }

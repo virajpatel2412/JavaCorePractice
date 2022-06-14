@@ -9,33 +9,43 @@ package DataStructure;
 /**
  *
  * @author HP
- * @param <Object>  
+ * @param <T>  
  */
-public class Linkedlist<Object> {
+public class Linkedlist<T> {
 
     public Linkedlist() {
         this.head = null;
     }
     
-    private class Node{
-        Object data;
+    
+    
+    /**
+	 * @return the head
+	 */
+	public Node getHead() {
+		return head;
+	}
+
+	private class Node{
+        T data;
         Node next = null;
-        Node(){}
-        Node(Object data){
+        Node(T data){
             this.data = data;
         }
 
         @Override
         public String toString() {
-            return data+", ";
+            return data+" ";
         }   
     }
     
-    public Node head;
+    private Node head;
     private Node last = null;
     private int length = 0;
     
-    public void insertAtLast(Object data){
+    
+    
+    public void insertAtLast(T data){
         Node temp = new Node(data);
         if(this.head == null){
             this.head = temp;
@@ -48,13 +58,17 @@ public class Linkedlist<Object> {
         this.length++;
     }
     
-    public void insertAtLast(Object[] arr, int x){
+    
+    
+    public void insertAtLast(T[] arr, int x){
         for(int i=0; i<x; i++){
             insertAtLast(arr[i]);
         }
     }
     
-    public void insertAtFirst(Object data){
+    
+    
+    public void insertAtFirst(T data){
         Node temp = new Node(data);
         if(head == null){
             this.head = temp;
@@ -66,13 +80,17 @@ public class Linkedlist<Object> {
         this.length++;
     }
     
-    public void insertAtFirst(Object[] arr, int x){
+    
+    
+    public void insertAtFirst(T[] arr, int x){
         for(int i=x-1; i>=0; i--){
             insertAtFirst(arr[i]);
         }
     }
     
-    public void insert(Object data, int x){
+    
+    
+    public void insert(T data, int x){
         Node cur = this.head;
         Node temp = new Node(data);
         if(x>=this.length){
@@ -88,7 +106,9 @@ public class Linkedlist<Object> {
         this.length++;
     }
     
-    public void insert(Object[] arr, int length, int index){
+    
+    
+    public void insert(T[] arr, int length, int index){
         Node cur = this.head;
         Node temp = null;
         if(index>this.length){
@@ -108,16 +128,19 @@ public class Linkedlist<Object> {
         }
     }
     
+    
+    
     public boolean removefirst(){
         if(this.head == null)
             return false;
         else{
-            Node temp = this.head;
             this.head = this.head.next;
             this.length--;
             return true;
         }
     }
+    
+    
     
     public boolean removeLast(){
         if(this.last == null){
@@ -133,6 +156,8 @@ public class Linkedlist<Object> {
             return true;
         }
     }
+    
+    
     
     public boolean remove(int index){
         if(this.length < index-1){
@@ -153,8 +178,10 @@ public class Linkedlist<Object> {
         }
     }
     
-    public Object get(int index){
-        Object temp = null;
+    
+    
+    public T get(int index){
+        T temp = null;
         if(index<0 || index >= this.length){
            return null;
         }
@@ -173,6 +200,49 @@ public class Linkedlist<Object> {
         }
     }
     
+    
+    
+    public boolean equal(Node a, Node b) {
+    	if(a == null && b!=null) {
+    		return false;
+    	}
+    	if(a!=null && b==null)
+    		return false;
+    	if(a == null && b == null)
+    		return true;
+    	return (a.data == b.data && equal(a.next, b.next));
+    }
+    
+    
+    public boolean isEquals(Linkedlist a) {
+    	return equal(this.head, a.head);
+    }
+    
+    
+    
+    
+    public void reverse() {
+    	this.last = reverseList(this.head);
+    }
+    
+    
+    
+    private Node reverseList(Node root) {
+    	if(root == null) {
+    		return null;
+    	}
+    	if(root.next == null) {
+    		this.head = root;
+    		return root;
+    	}
+    	Node temp = reverseList(root.next);
+    	temp.next = root;
+    	root.next = null;
+    	return root;
+    }
+    
+    
+    
     public void printList(){
         Node temp = this.head;
         while(temp.next != null){ 
@@ -182,18 +252,32 @@ public class Linkedlist<Object> {
         System.out.println(temp.data);
     }
     
+    
+    
     public int size(){
         return this.length;
     }
     
+    
+    
+    public void printReverse(Node root) {
+    	if(root == null) {
+    		return;
+    	}
+    	printReverse(root.next);
+    	System.out.print(root);
+    }
+    
+    
+    
     @Override
     public String toString(){
-        String str = " ";
+        String str = "";
         if(this.head == null){
             return null;
         }
         else{
-            str+= "[";
+            str+= "[ ";
             Node temp = this.head;
             while(temp != null){
                 str+= temp;
